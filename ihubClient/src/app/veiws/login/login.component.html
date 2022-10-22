@@ -1,23 +1,25 @@
 <mat-card>
   <mat-card-title>Login</mat-card-title>
   <mat-card-content>
-    <form>
+    <form [formGroup] = "loginForm">
       <p>
         <mat-form-field appearance="outline" class="example-form-field">
           <mat-label>User Name</mat-label>
-          <input matInput type="text">
+          <input formControlName = "username" matInput type="text">
+          <mat-error *ngIf="usernameField.invalid">
+            <span *ngIf="usernameField.errors?.['required']">Nic is Required</span>
         </mat-form-field>
       </p>
       <p>
         <mat-form-field appearance="outline" class="example-form-field">
           <mat-label>Password</mat-label>
-          <input matInput type="password">
+          <input formControlName="password" matInput type="password">
         </mat-form-field>
       </p>
 
-      <p *ngIf="error" class="error">
-        {{ error }}
-      </p>
+<!--      <p *ngIf="error" class="error">-->
+<!--        {{ error }}-->
+<!--      </p>-->
 
       <div class="button">
         <button mat-button type="submit">Login</button>
