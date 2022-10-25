@@ -1,1 +1,53 @@
-<p>signup works!</p>
+<mat-card>
+  <mat-card-title>
+    Sign up
+  </mat-card-title>
+  <mat-card-content>
+    <form (ngSubmit)="submit()" [formGroup]="signUpForm">
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>User name</mat-label>
+          <input formControlName="userName" matInput>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input formControlName="email" matInput>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Mobile</mat-label>
+          <input formControlName="mobile" matInput>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input [type]="changeType?'password':'text'" formControlName="passWord" matInput>
+          <span (click)="viewPass()" class="eyeicon">
+          <mat-icon>{{this.visible ? 'visibility' : 'visibility_off'}}</mat-icon></span>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Comferm Password</mat-label>
+          <input [type]="changeType2?'password':'text'" formControlName="verifyPassWord" matInput>
+          <span (click)="viewPassVerify()" class="eyeicon">
+          <mat-icon>{{visible2 ? 'visibility' : 'visibility_off'}}</mat-icon></span>
+        </mat-form-field>
+      </p>
+      <div class="row ">
+        <div class="col-lg-9  ">
+          <div class="float-lg-end">
+            <button (click)="clearForm()" color="warn" mat-stroked-button type="button">Clear</button>&nbsp;
+            <button color="primary" mat-raised-button>Add</button>
+          </div>
+        </div>
+        <div class="col-lg-3"></div>
+      </div>
+
+    </form>
+  </mat-card-content>
+</mat-card>

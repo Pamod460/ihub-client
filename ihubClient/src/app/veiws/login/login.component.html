@@ -1,13 +1,13 @@
 <mat-card>
   <mat-card-title>Login</mat-card-title>
   <mat-card-content>
-    <form [formGroup] = "loginForm">
+    <form (ngSubmit)="submit()" [formGroup] = "loginForm">
       <p>
         <mat-form-field appearance="outline" class="example-form-field">
           <mat-label>User Name</mat-label>
           <input formControlName = "username" matInput type="text">
           <mat-error *ngIf="usernameField.invalid">
-            <span *ngIf="usernameField.errors?.['required']">Nic is Required</span>
+            <span *ngIf="usernameField.errors?.['required']">Nic is Required</span></mat-error>
         </mat-form-field>
       </p>
 
@@ -15,14 +15,17 @@
       <p>
         <mat-form-field appearance="outline" class="example-form-field">
           <mat-label>Password</mat-label>
-          <input formControlName="password" matInput type="password">
+          <input formControlName="password" matInput [type]="changeType?'password':'text'">
+          <span class="eyeicon" (click)="viewPass()">
+            <mat-icon>{{visible?'visibility':'visibility_off'}}</mat-icon></span>
+
         </mat-form-field>
       </p>
 
 
-<!--      <p *ngIf="error" class="error">-->
-<!--        {{ error }}-->
-<!--      </p>-->
+      <p *ngIf="error" class="error">
+        {{ error }}
+      </p>
 
       <div class="button">
         <button mat-button type="submit">Login</button>

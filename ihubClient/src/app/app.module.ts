@@ -1,18 +1,23 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { ItemVeiwComponent } from './veiws/main-window/item-veiw/item-veiw.component';
-import { LoginComponent } from './veiws/login/login.component';
-import { MainWindowComponent } from './veiws/main-window/main-window.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SignupComponent } from './veiws/signup/signup.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {ItemVeiwComponent} from './veiws/main-window/item-veiw/item-veiw.component';
+import {LoginComponent} from './veiws/login/login.component';
+import {MainWindowComponent} from './veiws/main-window/main-window.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {SignupComponent} from './veiws/signup/signup.component';
 import {MatCardModule} from "@angular/material/card";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {ReactiveFormsModule} from "@angular/forms";
 import {MatInputModule} from "@angular/material/input";
+import {MatButtonModule} from "@angular/material/button";
+import {HttpClientModule} from "@angular/common/http";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
+import {MatIconModule} from "@angular/material/icon";
+import {CommonModule} from "@angular/common";
 
 
 @NgModule({
@@ -21,7 +26,7 @@ import {MatInputModule} from "@angular/material/input";
     ItemVeiwComponent,
     LoginComponent,
     MainWindowComponent,
-    SignupComponent
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,9 +36,23 @@ import {MatInputModule} from "@angular/material/input";
     MatCardModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatButtonModule,
+    HttpClientModule,
+    MatSnackBarModule,
+    CommonModule,
+    MatSnackBarModule,
+    MatButtonModule,
+    MatIconModule,
+  ],
+
+  exports: [
+    MatSnackBarModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
