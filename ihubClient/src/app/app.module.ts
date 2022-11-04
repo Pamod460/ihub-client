@@ -18,6 +18,9 @@ import {HttpClientModule} from "@angular/common/http";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {MatIconModule} from "@angular/material/icon";
 import {CommonModule} from "@angular/common";
+import {MatTableModule} from "@angular/material/table";
+import {CarouselModule} from "ngx-owl-carousel-o";
+import {OwlModule} from "ngx-owl-carousel";
 
 
 @NgModule({
@@ -44,6 +47,10 @@ import {CommonModule} from "@angular/common";
     MatSnackBarModule,
     MatButtonModule,
     MatIconModule,
+    MatTableModule,
+    CarouselModule,
+    OwlModule
+
   ],
 
   exports: [

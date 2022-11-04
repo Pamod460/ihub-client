@@ -10,5 +10,12 @@ export class AppComponent {
   constructor() {
   }
 
+  navbarOpen = false;
+
+  toggleNavbar() {
+    this.navbarOpen = !this.navbarOpen;
+  }
+
+
 }
 

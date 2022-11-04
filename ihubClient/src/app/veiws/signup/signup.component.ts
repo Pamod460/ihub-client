@@ -1,8 +1,10 @@
-import {Component, OnInit, Type} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {SignUpService} from "../../services/sign-up.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {Signup} from "../../entities/signup";
+import {Md5} from "ts-md5";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-signup',
@@ -22,7 +24,7 @@ export class SignupComponent implements OnInit {
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(255),
-        Validators.pattern('^([A-Z][a-z]{2,})$')]
+        Validators.pattern('^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-z]+)$')]
       ),
       mobile: new FormControl("", [
         Validators.required,
@@ -62,43 +64,50 @@ export class SignupComponent implements OnInit {
   get verifyPassWordField(): FormControl {
     return this.signUpForm.controls.verifyPassWord as FormControl;
   }
-  changeType: boolean=true;
-  visible:boolean=true;
-  changeType2: boolean=true;
-  visible2:boolean=true;
-  error: String='';
-  viewPass(){
-    this.changeType=!this.changeType;
-    this.visible=!this.visible;
+
+  changeType: boolean = true;
+  visible: boolean = true;
+  changeType2: boolean = true;
+  visible2: boolean = true;
+  error: String = '';
+
+  viewPass() {
+    this.changeType = !this.changeType;
+    this.visible = !this.visible;
   }
-  viewPassVerify(){
-    this.changeType2=!this.changeType2;
-    this.visible2=!this.visible2;
+
+  viewPassVerify() {
+    this.changeType2 = !this.changeType2;
+    this.visible2 = !this.visible2;
   }
 
 
-  constructor(private _snackBar: MatSnackBar, private signUpService: SignUpService) {
+  constructor(private _snackBar: MatSnackBar, private signUpService: SignUpService, private router: Router) {
   }
 
   ngOnInit(): void {
 
   }
+
   clearForm() {
     this.signUpForm.reset();
 
   }
 
-  async submit():Promise<void> {
-
+  async submit(): Promise<void> {
     if (!this.signUpForm.invalid) {
-      console.log(this.passwordField.value)
       if (this.passwordField.value == this.verifyPassWordField.value) {
         let signup = new Signup();
         signup.username = this.userNameField.value;
         signup.email = this.emailField.value;
         signup.mobile = this.mobilField.value;
-        signup.password = this.passwordField.value;
+        const md5 = new Md5();
+        signup.password = md5.appendStr(this.passwordField.value).end();
         signup = await this.signUpService.sigUp(signup);
+        if (signup) {
+          this.router.navigate(['login'])
+        }
+        this.clearForm();
 
       } else {
         this._snackBar.open("pass word does not match", '', {

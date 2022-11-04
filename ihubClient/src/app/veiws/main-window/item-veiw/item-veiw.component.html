@@ -1,1 +1,30 @@
-<p>item-veiw works!</p>
+<div class="row">
+
+  <div  class="col-2 " *ngFor="let itm of items" >
+
+      <div class="row">
+        <div class=" hover-zoom">
+          <img alt="image of {{itm.name +' '+itm.model}}" height="120px" mat-card-image
+               src="data:image/jpeg;base64, {{ itm.photo }}" width="150px">
+        </div>
+      </div>
+      <div class="row ">
+        <div class="text-center">
+          Rs :{{itm.price }}
+        </div>
+      </div>
+      <div class="row">
+        <div class="text-center">
+          {{itm.name }}&nbsp;{{itm.model}}
+        </div>
+      </div>
+      <div class="row ">
+        <div class="text-center">
+          {{itm.storage?.['name']}}/{{itm.memory?.['name']}}</div>
+      </div>
+    </div>
+
+
+
+</div>
+

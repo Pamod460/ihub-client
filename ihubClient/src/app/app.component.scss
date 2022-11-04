@@ -1,19 +1,31 @@
-nav{
-  background: orange;
+nav {
+  background: #816e47;
   color: white;
-  height: 50px;
 
-  #nav-row{
-    a{
-      text-decoration: none;
-      color: white;
-    }
-    margin-top: 15px;
-    margin-left: 5px;
+  a {
+    text-decoration: none;
+
   }
+
 }
-aside{
-  background: lightyellow;
+
+aside {
+  background: #c2c2ac;
   height: 800px;
 }
 
+mat-icon {
+  color: white;
+}
+
+#search{
+  border-bottom-left-radius: 75px;
+  border-top-left-radius: 75px;
+}
+#searchBtn{
+  border-bottom-right-radius: 75px;
+  border-top-right-radius: 75px;
+}
+.clearfix {
+  overflow: auto;
+}

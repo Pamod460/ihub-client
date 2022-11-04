@@ -8,28 +8,52 @@
   <title>Document</title>
 </head>
 <body>
-<nav>
-  <div class="row">
-    <div id="nav-row">
-
-      <a routerLink="">Home</a>&nbsp;&nbsp;
-      <a routerLink="login">Login</a>&nbsp;&nbsp;
-      <a routerLink="signup">SignUp</a>&nbsp;&nbsp;
+<div class="container clearfix">make your future smarter</div>
+<header class=" sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-expand-md">
+    <div class="collapse navbar-collapse">
+<!--      <button class="navbar-toggler" type="button">-->
+        <mat-icon>toggle</mat-icon>
+<!--        <span class="navbar-toggler-icon"></span>-->
+<!--      </button>-->
+      <a class="navbar-brand" routerLink="">
+        <mat-icon>home</mat-icon>
+      </a>
+      <form class="form-inline px-5  ms-0">
+        <div class="input-group">
+        <input class="form-control border border-danger border-2 " type="search" id="search" aria-label="Search">
+          <a class="bg-danger input-group-text boder border-danger" id="searchBtn" type="submit"> <mat-icon>search</mat-icon></a>
+        </div>
+      </form>
+      <div ngbDropdown class="ms-0">
+        <a ngbDropdownToggle>
+          <mat-icon>account_circle</mat-icon>
+        </a>
+        <div ngbDropdownMenu>
+          <a ngbDropdownItem routerLink="login">Login</a>
+          <a ngbDropdownItem routerLink="signup">SignUp</a>
+        </div>
+      </div>
     </div>
+  </nav>
+</header>
 
-  </div>
 
-</nav>
-<div class="container-fluid" app-theme>
+<div app-theme class="container-fluid">
   <div class="main">
     <div class="row">
       <aside class="col-lg-2">
       </aside>
-      <section class="content col-lg-10 bg-info">
+      <section class="content col-lg-10 bg-light text-dark  ">
         <router-outlet></router-outlet>
+<!--        <hr class="w-100">-->
+
       </section>
     </div>
+
   </div>
 </div>
+<footer>
+</footer>
 </body>
 </html>
