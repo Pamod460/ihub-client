@@ -2,23 +2,22 @@
   border: #d2d2d2 solid 2px !important;
 }
 *{
-
+  font-family: "Trajan pro bold", serif !important;
 }
-
 .zoom-image-custom {
   //width: 300px;
   //height: 300px;
   overflow: hidden;
-  margin: 0 auto;
-  font-family: "Trajan pro bold", serif !important;
+  //margin: 0 auto;
 }
 
-.zoom-image-custom  {
+.zoom-image-custom img {
   width: 100%;
   transition: 0.5s all ease-in-out;
 }
 
-.zoom-image-custom:hover  {
+.zoom-image-custom:hover img {
   transform: scale(1.5);
-  font-family: "Calibri", cursive !important;
+  font-family: "Yu Gothic", serif !important;
+
 }

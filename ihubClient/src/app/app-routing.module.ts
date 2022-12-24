@@ -4,12 +4,14 @@ import {ItemVeiwComponent} from "./veiws/main-window/item-veiw/item-veiw.compone
 import {LoginComponent} from "./veiws/login/login.component";
 import {SignupComponent} from "./veiws/signup/signup.component";
 import {MainWindowComponent} from "./veiws/main-window/main-window.component";
+import {ItemDetailVeiwComponent} from "./veiws/main-window/item-detail-veiw/item-detail-veiw.component";
 
 export const routes: Routes = [
   {path: 'items', component: ItemVeiwComponent},
   {path: 'login', component: LoginComponent},
   {path: 'signup', component: SignupComponent},
   {path: 'mainWindow', component: MainWindowComponent},
+  {path: 'itemDetail/:id', component: ItemDetailVeiwComponent},
 
 ];
 

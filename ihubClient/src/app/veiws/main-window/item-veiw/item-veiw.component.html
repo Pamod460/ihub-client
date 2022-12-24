@@ -1,30 +1,32 @@
-<div class="row">
+<div class="row pt-lg-5 mt-lg-5 ">
 
-  <div  class="col-2 " *ngFor="let itm of items" >
+  <div *ngFor="let itm of items" class="col-lg-2 ">
+    <div class="border border-custom zoom-image-custom">
 
-      <div class="row">
-        <div class=" hover-zoom">
+    <div class="row">
+      <div class=" ">
+        <a routerLink="../itemDetail/{{itm.id}}">
           <img alt="image of {{itm.name +' '+itm.model}}" height="120px" mat-card-image
-               src="data:image/jpeg;base64, {{ itm.photo }}" width="150px">
-        </div>
-      </div>
-      <div class="row ">
-        <div class="text-center">
-          Rs :{{itm.price }}
-        </div>
-      </div>
-      <div class="row">
-        <div class="text-center">
-          {{itm.name }}&nbsp;{{itm.model}}
-        </div>
-      </div>
-      <div class="row ">
-        <div class="text-center">
-          {{itm.storage?.['name']}}/{{itm.memory?.['name']}}</div>
+               src="data:image/jpeg;base64, {{ itm.photo }}" width="150px" class="border m-3 border-custom"></a>
       </div>
     </div>
+    <div class="row">
+      <div class="text-center">
+        Rs :{{itm.price }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="text-center">
+        {{itm.name }}&nbsp;{{itm.model}}
+      </div>
+    </div>
+    <div class="row ">
+      <div class="text-center">
+        {{itm.storage?.['name']}}/{{itm.memory?.['name']}}</div>
+    </div>
+  </div>
 
-
+  </div>
 
 </div>
 

@@ -11,8 +11,8 @@ import {OwlOptions} from "ngx-owl-carousel-o";
 })
 export class ItemVeiwComponent implements OnInit {
   items: Item[] = [];
-  imageurl: SafeUrl = "";
-  col: String[] = []
+  // imageurl: SafeUrl = "";
+  col: String[] = [];
   // datum: any;
 
   constructor(private itemService: ItemService, private domSanitizer: DomSanitizer) {

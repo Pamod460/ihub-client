@@ -1,0 +1,41 @@
+<div *ngIf="item!==null">
+  <div class="row p-3">
+    <div class="col-lg-12 ">
+      <div class="row"><h1>{{item.name}}  {{item.model}}</h1></div>
+      <div class="row ">
+        <div class="col-lg-3 ">
+          <div class="row border  p-3 zoom-image-custom"><img alt="image of {{item.name +' '+item.model}}" height="140px" mat-card-image
+                                src="data:image/jpeg;base64, {{ item.photo }}" width="200px"></div>
+          <div class="row ">
+            <div class="col-lg-12 border ">
+              <div class="row">
+
+                <div class="col-lg-6"><h2>Price </h2></div>
+                <div class="col-lg-6"><h2>{{item.price}}</h2></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 border">
+          <div class="row">
+            <div class="col-lg-6">Model Name</div>
+            <div class="col-lg-6">{{item.name}}  {{item.model}}</div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">Brand</div>
+            <div class="col-lg-6">{{item.brand?.['name']}}</div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">Specifications</div>
+            <div class="col-lg-6">{{item.specifications}}</div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">Category</div>
+            <div class="col-lg-6">{{item.category?.['name']}}</div>
+          </div>
+        </div>
+        <div class="col-lg-5"></div>
+      </div>
+    </div>
+  </div>
+</div>

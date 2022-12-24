@@ -21,6 +21,8 @@ import {CommonModule} from "@angular/common";
 import {MatTableModule} from "@angular/material/table";
 import {CarouselModule} from "ngx-owl-carousel-o";
 import {OwlModule} from "ngx-owl-carousel";
+import { ItemDetailVeiwComponent } from './veiws/main-window/item-detail-veiw/item-detail-veiw.component';
+import { ItemFormComponent } from './veiws/main-window/item-form/item-form.component';
 
 
 @NgModule({
@@ -30,6 +32,8 @@ import {OwlModule} from "ngx-owl-carousel";
     LoginComponent,
     MainWindowComponent,
     SignupComponent,
+    ItemDetailVeiwComponent,
+    ItemFormComponent,
   ],
   imports: [
     BrowserModule,
